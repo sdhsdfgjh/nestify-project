@@ -26,7 +26,7 @@ module.exports.saveRedirectUrl = (req, res, next) => {
 };
 
 // ───────────────────────────────────────────────────────────
-// 3) LISTING OWNERSHIP CHECK (SAFE)
+// 3) LISTING OWNERSHIP CHECK
 // ───────────────────────────────────────────────────────────
 module.exports.isOwner = async (req, res, next) => {
   const { id } = req.params;
@@ -37,11 +37,7 @@ module.exports.isOwner = async (req, res, next) => {
     return res.redirect("/listings");
   }
 
-  if (
-    !listing.owner ||
-    !res.locals.currUser ||
-    listing.owner.toString() !== res.locals.currUser._id.toString()
-  ) {
+  if (!listing.owner || !req.user || listing.owner.toString() !== req.user._id.toString()) {
     req.flash("error", "You do not have permission to do that.");
     return res.redirect(`/listings/${id}`);
   }
@@ -50,7 +46,7 @@ module.exports.isOwner = async (req, res, next) => {
 };
 
 // ───────────────────────────────────────────────────────────
-// 4) REVIEW AUTHOR CHECK (SAFE)
+// 4) REVIEW AUTHOR CHECK
 // ───────────────────────────────────────────────────────────
 module.exports.isReviewAuthor = async (req, res, next) => {
   const { id, reviewId } = req.params;
@@ -61,11 +57,7 @@ module.exports.isReviewAuthor = async (req, res, next) => {
     return res.redirect(`/listings/${id}`);
   }
 
-  if (
-    !review.author ||
-    !res.locals.currUser ||
-    review.author.toString() !== res.locals.currUser._id.toString()
-  ) {
+  if (!review.author || !req.user || review.author.toString() !== req.user._id.toString()) {
     req.flash("error", "You do not have permission to do that.");
     return res.redirect(`/listings/${id}`);
   }
