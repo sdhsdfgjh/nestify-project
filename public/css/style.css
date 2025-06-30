@@ -1,42 +1,41 @@
-body{
-    font-family: 'Inter', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-family: 'Poppins', sans-serif;
+/* Base Layout */
+body {
+    font-family: 'Poppins', 'Montserrat', 'Inter', 'Plus Jakarta Sans', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
-
-.container{
+.container {
     flex: 1;
+    padding: 1rem;
 }
 
-/* navbar */
-
-.navbar{
+/* Navbar */
+.navbar {
     height: 5rem;
     background-color: white;
-    
-}
-.fa-compass{
-     color: #fe424d;
-     font-size: 2rem;
- }
-.nav-link{
-    color: #222222 !important;
-}
-.f-info-links a{
-    text-decoration: none;
-    color: #222222;
-}
-.f-info-links a:hover{
-    text-decoration: underline;
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.f-info{
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Footer */
+.f-info {
     text-align: center;
     display: flex;
     height: 8rem;
@@ -44,70 +43,135 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
-}
-.f-info-social, .f-info-links,.f-info-brand{
-    width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-    
+    padding: 1rem;
 }
 
-.f-info-social i{
+.f-info-links,
+.f-info-social,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    margin: 0 0.5rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-social i {
     margin-right: 1rem;
     font-size: 1.2rem;
 }
 
-/* cards  */
-
-.listing-card{
+/* Cards */
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
 }
-.card-img-top{
+
+.card-img-top {
     border-radius: 1rem !important;
     width: 100%;
+    height: 30vh;
     object-fit: cover !important;
 }
-.card-body{
-    padding: 0 !important;
-   
 
+.card-body {
+    padding: 0 !important;
 }
 
 .card-text {
     font-weight: 400 !important;
 }
 
-.listing-link{
+.listing-link {
     text-decoration: none !important;
     color: #222222;
 }
 
-.card-img-overlay{
+.card-img-overlay {
     opacity: 0;
+    transition: opacity 0.3s ease;
 }
-.card-img-overlay:hover{
+
+.card-img-overlay:hover {
     opacity: 0.2;
     background-color: white;
 }
-/* New Page  */
-.add-btn{
+
+/* New Listing Button */
+.add-btn {
     background-color: #fe424d !important;
     border: none !important;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
-.card-img-top{
-    height: 30vh;
+/* Register Page */
+form.register-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btns{
-    display: flex;
+form.register-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-/* //map  */
+form.register-form input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
 
-#map{
+form.register-form button {
+    background-color: #003366;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form.register-form button:hover {
+    background-color: #00509e;
+}
+
+/* Homepage Center Text */
+.homepage {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.homepage h2 {
+    font-size: 2.5rem;
+    color: #222;
+}
+
+.homepage p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Map */
+#map {
     height: 400px;
     width: 80vh;
- }
+    margin: 2rem auto;
+}

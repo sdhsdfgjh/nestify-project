@@ -103,6 +103,11 @@ mongoose.connect(dbUrl, {
   /****************************
    *  Routes                  *
    ****************************/
+
+  app.get("/", (req, res) => {
+    res.render("home"); // Make sure views/home.ejs exists
+  });
+  
   app.use("/", userRouter);
   app.use("/listings", listingRouter);
   app.use("/listings/:id/reviews", reviewRouter);
