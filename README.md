@@ -7,7 +7,7 @@
 ## 🚀 Live Project
 
 🔗 [Check out the live project here!](#)  
-*(Replace with your actual deployed link)*
+https://nestify-hub.onrender.com/
 
 ---
 
@@ -39,12 +39,12 @@
 
 ### 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/Wanderlust.git
+git clone https://github.com/your-username/nestify-project.git
 ```
 
 ### 2. Install dependencies:
 ```bash
-cd Wanderlust
+cd nestify-project
 npm install
 ```
 
@@ -65,7 +65,7 @@ SESSION_SECRET=your_session_secret
 npm start
 ```
 
-Visit `http://localhost:3000` in your browser to explore Wanderlust locally.
+Visit `http://localhost:8080` in your browser to explore Wanderlust locally.
 
 ---
 
@@ -82,8 +82,3 @@ If you find a bug or want to suggest a new feature, feel free to open an issue o
 
 ---
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
