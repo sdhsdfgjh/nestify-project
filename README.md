@@ -6,7 +6,8 @@
 
 ## 🚀 Live Project
 
-🔗 [Check out the live project here!](#)  
+ Check out the live project here!
+ 
 https://nestify-hub.onrender.com/
 
 ---
