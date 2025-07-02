@@ -1,144 +1,173 @@
 <% layout("/layouts/boilerplate") %>
+
 <body>
   <style>
-    #filters {
-      display: flex;
-      overflow-x: scroll;
-      align-items: center;
-    }
-    #filters::-webkit-scrollbar {
-      display: none;
-    }
-    #filters {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
+    /* TAGLINE STYLES (bigger now) */
+  .tagline-container {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.8rem; /* ⬆️ was 1.2rem */
+    font-weight: 600;
+    color: #444;
+    height: 2.4rem;
+  }
+
+  .tagline-text {
+    animation: fadeIn 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .filter {
+    /* TESTIMONIAL STYLES (smaller) */
+    .testimonial-section {
+      margin: 1rem auto;
       text-align: center;
-      margin-right: 2rem;
-      margin-top: 2rem;
-      opacity: 0.8;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 400;
+      color: #555;
+      min-height: 2.2rem;
+      max-width: 700px;
     }
-    .filter:hover {
+
+    .testimonial-text {
+      transition: opacity 1s ease-in-out;
       opacity: 1;
-      cursor: pointer;
     }
-    .filter p {
-      font-size: 0.8rem;
+
+    /* LISTING CARDS (bigger visuals) */
+    .listing-link {
+      text-decoration: none;
+      color: inherit;
     }
+
+    .listing-card {
+      margin: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .listing-card:hover {
+      transform: scale(1.025);
+    }
+
+    .card-img-top {
+  border-radius: 1rem !important;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  margin-bottom: 1rem; /* 🆕 adds spacing between image and text */
+}
+
+.card {
+  padding: 1rem; /* 🆕 adds spacing inside card edges */
+  margin: 1rem;  /* optional: adds space between cards */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+    .card-body {
+      padding: 1.2rem;
+    }
+
+    .card-text b {
+      font-size: 1.1rem;
+    }
+
     .tax-info {
       display: none;
     }
-    .tax-toggle {
-      border: 1px solid black;
-      border-radius: 1rem;
-      height: 3.25rem;
-      padding: 1rem;
-      margin-left: 2rem;
-      display: flex;
-      align-items: center;
-    }
   </style>
-  <div id="filters-main">
-    <div id="filters">
-      <div class="filter">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Room</p>
-      </div>
 
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>Mountain</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castles</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Amazing Pools</p>
-      </div>
+  <!-- ANIMATED TAGLINE -->
+  <div class="tagline-container">
+    <div class="tagline-text" id="taglineText">Find your next adventure 🧭</div>
+  </div>
 
-      <div class="filter">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-cow"></i></div>
-        <p>Farm</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-snowflake"></i></div>
-        <p>Snow</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-igloo"></i></div>
-        <p>Domes</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-water"></i></div>
-        <p>Lakes</p>
-      </div>
-      <div class="tax-toggle">
-        <div class="form-check form-check-reverse form-switch ">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-          />
-          <label class="form-check-label" for="flexSwitchCheckDefault"
-            >Display total after taxes</label
-          >
-        </div>
-      </div>
+  <!-- AUTO-SLIDING TESTIMONIALS -->
+  <div class="testimonial-section">
+    <div class="testimonial-text" id="testimonialText">
+      “Nestify helped us find the perfect weekend escape. 🏞️ – Priya R.”
     </div>
   </div>
 
-  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-2">
+  <!-- LISTING CARDS -->
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-2">
     <% for(let listing of allListings) { %>
     <a href="/listings/<%= listing._id %>" class="listing-link">
       <div class="card col listing-card">
         <img
           src="<%= listing.image.url %>"
           class="card-img-top"
-          alt="listng image"
-          style="height: 20rem"
+          alt="listing image"
         />
-        <div class="card-img-overlay"></div>
         <div class="card-body">
           <p class="card-text">
-            <b><%=listing.title %></b>
-            <br />
-            &#8377; <%= listing.price%> /night
-            <i class="tax-info"> &nbsp; +18% GST </i>
+            <b><%= listing.title %></b><br />
+            ₹ <%= listing.price %> /night
+            <i class="tax-info"> +18% GST</i>
           </p>
         </div>
       </div>
     </a>
     <% } %>
   </div>
-</body>
 
-<script>
-  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-  taxSwitch.addEventListener("click", () => {
-    let taxInfo = document.getElementsByClassName("tax-info");
-    for (info of taxInfo) {
-      if (info.style.display != "inline") {
-        info.style.display = "inline";
-      } else {
-        info.style.display = "none";
-      }
-    }
-  });
-</script>
+  <!-- SCRIPTS -->
+  <script>
+    // TAGLINES
+    const taglines = [
+      "Find your next adventure 🧭",
+      "Unwind in stunning stays ✨",
+      "Escape the ordinary 🏝️",
+      "Book your dream weekend 🛏️",
+      "Cozy cabins & city views 🌆",
+      "Nature, comfort, and you 🍃",
+      "A stay for every story 📖"
+    ];
+
+    let tIndex = 0;
+    const taglineText = document.getElementById("taglineText");
+
+    setInterval(() => {
+      taglineText.style.opacity = 0;
+      setTimeout(() => {
+        tIndex = (tIndex + 1) % taglines.length;
+        taglineText.textContent = taglines[tIndex];
+        taglineText.style.opacity = 1;
+      }, 400);
+    }, 4000);
+
+    // TESTIMONIALS
+    const testimonials = [
+      "“Nestify helped us find the perfect weekend escape. 🏞️ – Priya R.”",
+      "“A cozy cabin in the woods — just what we needed! 🌲 – Kunal D.”",
+      "“Smooth booking, friendly hosts, 10/10! 🌟 – Aisha N.”",
+      "“Found a pet-friendly place with a lake view! 🐶💧 – Ravi V.”",
+      "“My go-to for quick weekend gateways. 🧳 – Sneha S.”",
+      "“Loved the mountain view at sunrise! ⛰️🌅 – Aman J.”",
+      "“Affordable, safe, and beautifully clean. ✅ – Isha T.”",
+      "“It felt like home, but better. 🏡 – Veer M.”",
+      "“Easy booking and great recommendations. 👍 – Meera G.”",
+      "“Best experience I’ve had with any rental site. 💯 – Tarun P.”"
+    ];
+
+    let testimonialIndex = 0;
+    const testimonialText = document.getElementById("testimonialText");
+
+    setInterval(() => {
+      testimonialText.style.opacity = 0;
+      setTimeout(() => {
+        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+        testimonialText.innerHTML = testimonials[testimonialIndex];
+        testimonialText.style.opacity = 1;
+      }, 500);
+    }, 5000);
+  </script>
+</body>
