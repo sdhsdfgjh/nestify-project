@@ -24,12 +24,24 @@
 
 <br />
 
-<div class="btns offset-2 mb-5">
-  <a class="btn add-btn btn-dark offset-3 edit-btn" href="/listings/<%= listing._id %>/edit">EDIT</a>
-  <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-    <button class="btn btn-dark offset-5">Delete</button>
+<!-- ACTION BUTTONS -->
+<div class="btns d-flex justify-content-center gap-3 mb-5">
+  <a
+    href="/listings/<%= listing._id %>/edit"
+    class="btn add-btn btn-dark edit-btn"
+  >
+    Edit
+  </a>
+
+  <form
+    action="/listings/<%= listing._id %>?_method=DELETE"
+    method="POST"
+    class="m-0"
+  >
+    <button type="submit" class="btn btn-dark">Delete</button>
   </form>
 </div>
+
 
 <div class="col-8 offset-2 mt-3">
   <hr />
@@ -116,4 +128,17 @@
       width: 200px;
     }
   }
+
+  .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btns form {
+    margin: 0;
+  }
+  
 </style>
